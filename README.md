@@ -11,8 +11,8 @@ computing tasks.  The scripts were last tested on December 18, 2014.
 
 ## Initial setup
 This readme file assumes you already have access to the engaging1
-(or *eo* in short) cluster.  (Here is more information
-[about the eo cluster](https://github.com/christophernhill/engaging1/blob/master/facility_notes).)
+(or *eo* in short) cluster.  Here is more information
+[about the eo cluster](https://github.com/christophernhill/engaging1/blob/master/facility_notes).
 Once you have logged into the cluster, you can create a copy of this
 git repository by cloning it.  Run the following command at the shell
 prompt
@@ -68,9 +68,9 @@ sbatch test_ex2.sh
 
 Among other things, the script specifies the
 queue, number of nodes and cores, and time requested for the job to
-run.  (If the job takes longer to run than the amount of time
+run.  If the job takes longer to run than the amount of time
 requested, it will be terminated before it completes.  However,
-jobs that request for less time will move more quickly in the queue.)  [More information about SLURM commands](https://rc.fas.harvard.edu/resources/documentation/convenient-slurm-commands/)
+jobs that request for less time will move more quickly in the queue.  [More information about SLURM commands](https://rc.fas.harvard.edu/resources/documentation/convenient-slurm-commands/)
 is available at this link.
 
 The script executes `mpirun` and tells `mpirun` to launch one instance of R
@@ -88,3 +88,8 @@ After the job is completed, you can view the output by running
 ```
 more example2.Rout
 ```
+
+##Acknowledgements
+Parts of this readme and *setup.sh* were adapted from [Jonathan
+Olmsted's setup scripts for R-based HPC at Princeton University](https://github.com/olmjo/tigress-scripts).
+Greg Shomo (Engaging1 Admin) provided invaluable assistance with Rpmi setup.
