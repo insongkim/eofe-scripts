@@ -92,4 +92,4 @@ more example2.Rout
 ##Acknowledgements
 Parts of this readme and *setup.sh* were adapted from [Jonathan
 Olmsted's setup scripts for R-based HPC at Princeton University](https://github.com/olmjo/tigress-scripts).
-Greg Shomo (Engaging1 Admin) provided invaluable assistance with Rpmi setup.
+Greg Shomo (Engaging1 Admin) provided invaluable assistance with Rmpi setup.
