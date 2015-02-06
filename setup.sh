@@ -85,6 +85,7 @@ while true; do
     case $yn in
         [Yy]* )          
             source ~/.bashrc
+            module use /cm/shared/modulefiles/engaging
             Rscript install_misc.R;
             break;;
         [Nn]* )
