@@ -43,7 +43,24 @@ useVer Rmpi ${RMPIVERS}
 echo ""
 
 ## ===================================================================
-## Rmpi DL
+while true; do
+    read -p "\
+@ Do you need to add modules to .bashrc? (Select Yes for first time users)
+[y/n]" yn
+    case $yn in
+        [Yy]* )
+	    echo -e "\nmodule use /cm/shared/modulefiles/engaging" >> ~/.bashrc
+	    echo -e "module add R/3.1.1g" >> ~/.bashrc
+	    echo -e "module add openmpi/1.8.3" >> ~/.bashrc
+	    source ~/.bashrc
+            break;;
+
+        [Nn]* ) break;;
+        * ) ansYN ;;
+    esac
+done
+echo ""
+
 while true; do
     read -p "\
 @ Do you need to download Rmpi?
@@ -66,8 +83,7 @@ while true; do
 [y/n]" yn
     case $yn in
         [Yy]* )
-            module use /cm/shared/modulefiles/engaging 
-            module add openmpi/${OMPIVERS}
+	    source ~/.bashrc
             R CMD INSTALL -l ~/R_LIBS rmpi.tar.gz --configure-args=--with-mpi=/cm/shared/engaging/openmpi/${OMPIVERS}
             break;;
 
@@ -83,8 +99,8 @@ while true; do
 @ Do you need to install misc. HPC R packages?
 [y/n]" yn
     case $yn in
-        [Yy]* )          
-            source ~/.bashrc
+        [Yy]* )         
+	    source ~/.bashrc
             Rscript install_misc.R;
             break;;
         [Nn]* )
