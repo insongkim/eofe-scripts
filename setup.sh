@@ -50,7 +50,7 @@ while true; do
     case $yn in
         [Yy]* )
 	    echo -e "\nmodule use /cm/shared/modulefiles/engaging" >> ~/.bashrc
-	    echo -e "module add R/3.1.1g" >> ~/.bashrc
+	    echo -e "module add R/3.1.1" >> ~/.bashrc
 	    echo -e "module add openmpi/1.8.3" >> ~/.bashrc
 	    source ~/.bashrc
             break;;
@@ -99,8 +99,14 @@ while true; do
 @ Do you need to install misc. HPC R packages?
 [y/n]" yn
     case $yn in
+<<<<<<< HEAD
         [Yy]* )         
 	    source ~/.bashrc
+=======
+        [Yy]* )          
+            source ~/.bashrc
+            module use /cm/shared/modulefiles/engaging
+>>>>>>> d846dbcfefc5f86500b596f617bdcf082e0b140a
             Rscript install_misc.R;
             break;;
         [Nn]* )
