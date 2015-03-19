@@ -99,14 +99,8 @@ while true; do
 @ Do you need to install misc. HPC R packages?
 [y/n]" yn
     case $yn in
-<<<<<<< HEAD
         [Yy]* )         
 	    source ~/.bashrc
-=======
-        [Yy]* )          
-            source ~/.bashrc
-            module use /cm/shared/modulefiles/engaging
->>>>>>> d846dbcfefc5f86500b596f617bdcf082e0b140a
             Rscript install_misc.R;
             break;;
         [Nn]* )
@@ -115,4 +109,3 @@ while true; do
     esac
 done
 echo ""
-
