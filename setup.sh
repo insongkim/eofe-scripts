@@ -45,13 +45,15 @@ echo ""
 ## ===================================================================
 while true; do
     read -p "\
-@ Do you need to add modules to .bashrc? (Select Yes for first time users)
+@ Do you need to update and add modules to .bashrc? (Select Yes for first time users)
 [y/n]" yn
     case $yn in
         [Yy]* )
 	    echo -e "\nmodule use /cm/shared/modulefiles/engaging" >> ~/.bashrc
 	    echo -e "module add R/3.1.1" >> ~/.bashrc
 	    echo -e "module add openmpi/1.8.3" >> ~/.bashrc
+            mkdir ~/R_LIBS
+            echo -e "\nexport R_LIBS=~/R_LIBS/ " >> ~/.bashrc
 	    source ~/.bashrc
             break;;
 
@@ -86,7 +88,6 @@ while true; do
 	    source ~/.bashrc
             R CMD INSTALL -l ~/R_LIBS rmpi.tar.gz --configure-args=--with-mpi=/cm/shared/engaging/openmpi/${OMPIVERS}
             break;;
-
         [Nn]* )
             break;;
         * ) ansYN ;;
