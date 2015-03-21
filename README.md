@@ -38,6 +38,10 @@ source setup.sh
 You will be prompted with the following questions:
 
 ```
+@ Do you need to update and add modules to .bashrc? (Select Yes for
+first time users)
+[y/n]
+
 @ Do you need to download Rmpi?
 [y/n]
 
