@@ -20,7 +20,7 @@ prompt
 ```bash
 git clone https://github.com/insongkim/eofe-scripts.git
 ```
-which will create a subdirectory named *eofe-scripts*.  Then, navigate
+which will create a subdirectory named `eofe-scripts`.  Then, navigate
 into the repository directory:
 
 ```bash
@@ -61,11 +61,12 @@ Jobs on the cluster are managed through
 With the exception of extremely simple tasks, all jobs should be
 submitted through SLURM.
 
-*test_ex2.sh* in the examples folder provides a template for a SLURM
- script. To run the script, `cd` to the examples folder, and call
+**Self-contained examples**
+*test_ex2.sh* in the `examples` folder provides a template for a SLURM
+ script. This script assumes that you have access to the `sched_mit_hill` queue. If you have access to another queue, modify the `#SBATCH -p sched_mit_hill` line accordingly. To run the script, `cd` to the examples folder, and call
  `sbatch`:
 
-```
+```bash
 cd examples
 sbatch test_ex2.sh
 ```
@@ -92,6 +93,9 @@ After the job is completed, you can view the output by running
 ```
 more example2.Rout
 ```
+
+**Demo example**
+The `demo` folder contains an example of how block bootstrap can be parallelized.  It demonstrates how users can pass arguments into their R script, and implements parallelization through either `foreach` or `snow`.  The batch script, `run_bootstrap.sh`, assumes that the user has access to the `sched_17806` queue. If you have access to another queue, modify the `#SBATCH -p sched_17806` line accordingly.
 
 ##Acknowledgements
 Parts of this readme and *setup.sh* were adapted from [Jonathan
