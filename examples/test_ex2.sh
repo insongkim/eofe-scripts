@@ -5,7 +5,6 @@
 #SBATCH -t 10:00                # wall-time (hh:mm)
 #SBATCH -J test_parallel        # job name
 #SBATCH -o ./logs/log.%j        # output
-#SBATCH --mail-type=ALL         # notifications (does not seem to work)
 
 echo '==========' 
 cd ${SLURM_SUBMIT_DIR} 
