@@ -17,13 +17,13 @@ Once you have logged into the cluster, you can create a copy of this
 git repository by cloning it.  Run the following command at the shell
 prompt
 
-```
+```bash
 git clone https://github.com/insongkim/eofe-scripts.git
 ```
 which will create a subdirectory named *eofe-scripts*.  Then, navigate
 into the repository directory:
 
-```
+```bash
 cd eofe-scripts
 ```
 
@@ -31,7 +31,7 @@ cd eofe-scripts
 To install Rmpi and other R packages for parallel computing, run the
 following from the command line:
 
-```
+```bash
 source setup.sh
 ```
 
