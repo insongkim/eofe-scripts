@@ -63,12 +63,12 @@ submitted through SLURM.
 
 **Self-contained examples**
 *test_ex2.sh* in the `examples` folder provides a template for a SLURM
- script. This script assumes that you have access to the `sched_mit_hill` queue. If you have access to another queue, modify the `#SBATCH -p sched_mit_hill` line accordingly. To run the script, `cd` to the examples folder, and call
+ script. This script assumes that you have access to the `sched_17806` queue. If you have access to another queue, modify the `#SBATCH -p sched_17806` line accordingly. To run the script, `cd` to the examples folder, and call
  `sbatch`:
 
 ```bash
 cd examples
-sbatch test_ex2.sh
+sbatch runsimple.slurm
 ```
 
 Among other things, the script specifies the
@@ -79,8 +79,7 @@ jobs that request for less time will move more quickly in the queue.  [More info
 is available at this link.
 
 The script executes `mpirun` and tells `mpirun` to launch one instance of R
-and run *example2.R*. The R script generates 10 100k-by-10 dataframes,
-and runs `lm` on these dataframes in parallel.
+and run *simple.r*. The R script sends a job to 30 processors, each of which reports its node name and the system time.
 
 To check the status of your job, run
 
@@ -91,7 +90,7 @@ squeue -u  your_user_name
 After the job is completed, you can view the output by running
 
 ```
-more example2.Rout
+more simple.Rout
 ```
 
 **Demo example**
