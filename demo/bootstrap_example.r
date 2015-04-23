@@ -15,8 +15,8 @@ np <- as.numeric(args[2])
 ## Functions
 ### Bootstrap
 dobootstrap <- function(...) {
-    id <- unlist(tapply(d$ID, d$ccode, function(i) sample(i, length(i), replace=TRUE)))
-    D <- d[match(id, d$ID),]
+    ids <- sample(unique(d$ccode), length(unique(d$ccode)), replace=TRUE)
+    D <- do.call(rbind, lapply(ids, function(id) d[which(d$ccode==id),]))
     fit <- polr(polr.formula, data=D)
     c(fit$coefficients, fit$zeta)
 }
