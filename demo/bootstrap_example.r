@@ -3,7 +3,7 @@ ptm <- proc.time() # Start-time
 
 ## =============================================================================
 ## Preamble
-setwd("~/projects/demo")
+setwd("~/eofe-scripts/demo")
 
 packages <- c("doMPI", "doParallel", "snow", "MASS")
 sapply(packages, require, character.only=TRUE)
